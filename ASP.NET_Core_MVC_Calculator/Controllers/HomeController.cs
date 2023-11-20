@@ -14,7 +14,12 @@ namespace ASP.NET_Core_MVC_Calculator.Controllers
 
         [HttpPost]
         public IActionResult Index(Calculator calc)
-        {   
+        {
+            if (calc.AreTwoNumsNextToEachother())
+            {
+                ViewBag.Chyba = "Mezera mezi dvěmi čísli, chybí operátor.";
+            }
+            
             if (calc.IsLetterInInput())
             {
                 ViewBag.Chyba += "Příklad nesmí obsahovat písmena.";
