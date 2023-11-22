@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore.Query.SqlExpressions;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal;
 using Microsoft.IdentityModel.Tokens;
 using System.ComponentModel.DataAnnotations;
@@ -22,7 +23,9 @@ namespace ASP.NET_Core_MVC_Calculator.Models
         {
 
 
-            Input = Regex.Replace(Input, "^2", "^");
+            //Input = Regex.Replace(Input, "^2", "^");
+            Input = Regex.Replace(Input, "sqrt", "s");
+
             AddSpaceAroundOperators();
             InputSplit = Input.Split(' ', StringSplitOptions.RemoveEmptyEntries).ToList();
 
@@ -33,29 +36,62 @@ namespace ASP.NET_Core_MVC_Calculator.Models
         public double EvaluateRecursive(List<string> expression)
         {
 
+            if (expression.Contains("("))
+            {
+                int start = expression.LastIndexOf("(");
+                int end = 0;
+                int count = 0;
 
-            //if (expression.Contains("("))
-            //{
-            //    int start = expression.LastIndexOf("(");
-            //    int end = 0;
+                for (int i = start; i < expression.Count; i++)
+                {
+                    if (expression[i] == ")")
+                    {
+                        end = i;
+                        break;
+                    }
 
-            //    for (int i = start; i < expression.Count; i++)
-            //    {
-            //        if (expression[i] == ")")
-            //        {
-            //            end = i;
-            //            break;
-            //        }
-            //    }
+                    count++;
+                }
 
-            //    List<string> innerExpression = expression.GetRange(
+                List<string> innerExpression = expression.GetRange(start + 1, count - 1);
+                double innerResult = EvaluateRecursive(innerExpression);
 
-            //    double innerResult = EvaluateRecursive(innerExpression);
+                expression.RemoveRange(start, count + 1);
+                expression.Insert(start, innerResult.ToString());
 
-            //    expression = expression.Substring(0, start) + innerResult + expression.Substring(end + 1);
+                return EvaluateRecursive(expression);
+            }
 
-            //    return EvaluateRecursive(expression);
-            //}
+            if (expression.Contains("s")) {
+                
+                int index = expression.IndexOf("s");
+                double result = Math.Sqrt(double.Parse(expression[index + 1]));
+
+                expression[index] = result.ToString();
+                expression.RemoveAt(index + 1);
+
+                return EvaluateRecursive(expression);
+            }
+
+            if (expression.Contains("^"))
+            {
+                int index = expression.IndexOf("^");
+                
+                double value = double.Parse(expression[index - 1]);
+                double power = double.Parse(expression[index + 1]);
+
+                double result = Math.Pow(value, power);
+
+                expression[index] = result.ToString();
+                expression.RemoveAt(index - 1);
+                expression.RemoveAt(index);   
+             
+
+                return EvaluateRecursive(expression);
+            }
+
+
+           
 
             if (expression.Contains("*"))
             {
@@ -68,13 +104,14 @@ namespace ASP.NET_Core_MVC_Calculator.Models
                     expression[index] = sum.ToString();
                     expression.RemoveAt(index - 1);
                     expression.RemoveAt(index);
-                   
+
 
                 }
 
                 return EvaluateRecursive(expression);
-
             }
+
+        
 
             if (expression.Contains("/"))
             {
@@ -94,7 +131,7 @@ namespace ASP.NET_Core_MVC_Calculator.Models
                 return EvaluateRecursive(expression);
 
             }
-
+            
             if (expression.Contains("+"))
             {
                 int index = expression.IndexOf("+");
@@ -136,58 +173,21 @@ namespace ASP.NET_Core_MVC_Calculator.Models
 
 
             else 
-            { return double.Parse(String.Join("", expression.ToArray())); }
+            {
+                return double.Parse(String.Join("", expression.ToArray())); 
+            }
            
-
-
-            //if (expression.Contains ("s(")) { 
-
-            //    int start = expression.IndexOf ("s(");
-            //    int end = 0;
-
-            //    for (int i = start; i < expression.Length; i++)
-            //    {
-            //        if (expression[i] == ')')
-            //        {
-            //            end = i;
-            //            break;
-            //        }
-            //    }
-
-            //    string innerExpression = expression.Substring(start + 1, end - start - 2);
-
-            //    double innerResult = EvaluateRecursive(innerExpression);
-
-            //    expression = expression.Substring(0, start) + Math.Sqrt(innerResult) + expression.Substring(end + 1);
-
-            //    return EvaluateRecursive(expression);
-
-
-            //}
-
-            //if (expression.Contains("^"))
-            //{
-            //    string[] parts = expression.Split('^');
-            //    double value = double.Parse(parts[0].Trim());
-            //    double power = double.Parse(parts[1].Trim());
-
-            //    return Math.Pow(value, power);
-            //}
-           
-
-            //else
-            //{
-            //    return double.Parse(expression);
-            //}
         }
 
 
         public void AddSpaceAroundOperators()
         {
-          
-            string operators = "sgrt(|)|(|+|-|*|/|)^";
-            string regex = $"\\s*({operators})\\s*";
-            Regex.Replace(Input, regex, " $1 ");
+            char[] operators = { '+', '-', '*', '/', ')', '(', '^', 's' };
+
+            foreach (char op  in operators)
+            {
+                Input = Input.Replace(op.ToString(), $" {op} ");
+            }
 
         }
         

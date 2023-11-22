@@ -19,12 +19,12 @@ namespace ASP.NET_Core_MVC_Calculator.Controllers
             {
                 ViewBag.Chyba = "Mezera mezi dvěmi čísli, chybí operátor.";
             }
-            
+
             if (calc.IsLetterInInput())
             {
                 ViewBag.Chyba += "Příklad nesmí obsahovat písmena.";
             }
-            
+
             if (calc.IsUnallowedOperatorAtBeginOrEnd())
             {
                 ViewBag.Chyba = "Nepovolený znak na konci nebo na začátku vstupu. ";
@@ -47,6 +47,7 @@ namespace ASP.NET_Core_MVC_Calculator.Controllers
             if (ModelState.IsValid)
             {
                 calc.GetResult();
+
             }
 
             return View(calc);
