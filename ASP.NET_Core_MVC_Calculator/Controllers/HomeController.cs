@@ -20,10 +20,10 @@ namespace ASP.NET_Core_MVC_Calculator.Controllers
                 ViewBag.Chyba = "Mezera mezi dvěmi čísli, chybí operátor.";
             }
 
-            if (calc.IsLetterInInput())
-            {
-                ViewBag.Chyba += "Příklad nesmí obsahovat písmena.";
-            }
+            //if (calc.IsLetterInInput())
+            //{
+            //    ViewBag.Chyba += "Příklad nesmí obsahovat písmena.";
+            //}
 
             if (calc.IsUnallowedOperatorAtBeginOrEnd())
             {
@@ -46,10 +46,16 @@ namespace ASP.NET_Core_MVC_Calculator.Controllers
             
             if (ModelState.IsValid)
             {
-                calc.GetResult();
+                if (ViewBag.Chyba == null)
+                {
+                        calc.GetResult();
+                }
+                
 
             }
 
+            
+          
             return View(calc);
         }
 
