@@ -6,67 +6,82 @@
 
 <!DOCTYPE html>
 
-<html>
+<html >
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Kalkulačka</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css"/>
 </head>
-<body>
+<body style="margin: 2rem;">
 
 <h1>Kalkulačka</h1>
 <hr />
-<p class="h3">Příklad k vypočítání:</p>
+    <h3>Příklad k vypočítání:</h3>
 <div class="row">
     <div class="col-md-4">
         <div>
+               
                 @if (ViewBag.Chyba != null)
                 {
                     <p style="color: red; ">Chyba vstupu: @ViewBag.Chyba</p>
+                }
+
+                @if (ViewBag.Expression != null)
+                {
+                    <p style="color: red;">Zadaný vstup: "@ViewBag.Expression".</p>
                 }
         </div>
         <form asp-action="Index">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
               @*   <label asp-for="Input" class="control-label"></label> *@
-                <input id="txtinput" asp-for="Input" class="form-control" />
+                <input id="inputText" asp-for="Input" class="form-control" />
                 <span asp-validation-for="Input" class="text-danger"></span>
             </div>
 
-            <div id="VirtualKeyboard">
-                    <input id="num7" type="button" value="7" class="btn" onclick="input(this);" />
-                    <input id="num8" type="button" value="8" class="btn" onclick="input(this);" />
-                    <input id="num9" type="button" value="9" class="btn" onclick="input(this);" />
-                    <input id="plus" type="button" value="+" class="btn" onclick="input(this);" />
-                    <input id="space" type="button" value=" " class="btn" onclick="input(this);" />
-                    <br />
-                    <input id="num4" type="button" value="4" class="btn" onclick="input(this);" />
-                    <input id="num5" type="button" value="5" class="btn" onclick="input(this);" />
-                    <input id="num6" type="button" value="6" class="btn" onclick="input(this);" />
-                    <input id="minus" type="button" value="-" class="btn" onclick="input(this);" />
-                    <input id="powerof2" type="button" value="()^2" class="btn" onclick="input(this);" />
-                    <br />
-                    <input id="num1" type="button" value="1" class="btn" onclick="input(this);" />
-                    <input id="num2" type="button" value="2" class="btn" onclick="input(this);" />
-                    <input id="num3" type="button" value="3" class="btn" onclick="input(this);" />
-                    <input id="multiply" type="button" value="*" class="btn" onclick="input(this);" />
-                    <input id="sqrt" type="button" value="√()" class="btn" onclick="input(this);" />
-                    <br />
-                    <input id="num0" type="button" value="0" class="btn" onclick="input(this);" />
-                    <input id="leftBracket" type="button" value="(" class="btn" onclick="input(this);" />
-                    <input id="rightBracket" type="button" value=")" class="btn" onclick="input(this);" />
-                    <input id="divide" type="button" value="/" class="btn" onclick="input(this);" />
-                    <input id="dot" type="button" value="." class="btn" onclick="input(this);" />
-                    <input id="delete" type="button" value="X" class="btn" onclick="delet(this);" />
+            <div class="container" id="VirtualKeyboard">
+                <div class="col">
 
+                        <input id="num7" type="button" value="7" class="btn btn-calc" onclick="input(this);" />
+                        <input id="num8" type="button" value="8" class="btn btn-calc" onclick="input(this);" />
+                        <input id="num9" type="button" value="9" class="btn btn-calc" onclick="input(this);" />
+                        <input id="plus" type="button" value="+" class="btn btn-calc" onclick="input(this);" />
+                        <input id="space" type="button" value=" " class="btn btn-calc" onclick="input(this);" />
+                </div>
 
+                <div class="col">
+                        <input id="num4" type="button" value="4" class="btn btn-calc" onclick="input(this);" />
+                        <input id="num5" type="button" value="5" class="btn btn-calc" onclick="input(this);" />
+                        <input id="num6" type="button" value="6" class="btn btn-calc" onclick="input(this);" />
+                        <input id="minus" type="button" value="-" class="btn btn-calc" onclick="input(this);" />
+                        <input id="powerof2" type="button" value="()^2" class="btn btn-calc" onclick="input(this);" />
+                </div>
+                   
+                <div class="col">
+                        <input id="num1" type="button" value="1" class="btn btn-calc" onclick="input(this);" />
+                        <input id="num2" type="button" value="2" class="btn btn-calc" onclick="input(this);" />
+                        <input id="num3" type="button" value="3" class="btn btn-calc" onclick="input(this);" />
+                        <input id="multiply" type="button" value="*" class="btn btn-calc" onclick="input(this);" />
+                        <input id="sqrt" type="button" value="√()" class="btn btn-calc" onclick="input(this);" />
+                </div>
+
+                <div class="col">
+                        <input id="num0" type="button" value="0" class="btn btn-calc" onclick="input(this);" />
+                        <input id="leftBracket" type="button" value="(" class="btn btn-calc" onclick="input(this);" />
+                        <input id="rightBracket" type="button" value=")" class="btn btn-calc" onclick="input(this);" />
+                        <input id="divide" type="button" value="/" class="btn btn-calc" onclick="input(this);" />
+                        <input id="dot" type="button" value="." class="btn btn-calc" onclick="input(this);" />
+                        <input id="delete" type="button" value="C" class="btn btn-calc" onclick="delet(this);" />
+                </div>
+         
             </div>
-            <br/>
+            
             <div class="form-group">
                <input type="submit" value="Vypočítej" class="btn btn-primary" />
              </div>
 
-                <p class="h3 mt-3">@Model.Result</p>
+                <h1 id="result">@Model.Result</h1>
            
         </form>
     </div>
@@ -75,14 +90,14 @@
 
 
      <script type="text/javascript">
-            function input(e) {
-                var txtinput = document.getElementById("txtinput");
-                txtinput.value = txtinput.value + e.value;
+            function input(c) {
+                var inputText = document.getElementById("inputText");
+                inputText.value = inputText.value + c.value;
             }
 
             function delet() {
-                var txtinput = document.getElementById("txtinput");
-                txtinput.value = txtinput.value.substr(0, txtinput.value.length - 1);
+                var inputText = document.getElementById("inputText");
+                inputText.value = inputText.value.substr(0, inputText.value.length - 1);
             }
         </script>
        

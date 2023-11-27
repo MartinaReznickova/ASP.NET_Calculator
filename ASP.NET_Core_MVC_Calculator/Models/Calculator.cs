@@ -12,17 +12,18 @@ namespace ASP.NET_Core_MVC_Calculator.Models
     {
 
         [Required(ErrorMessage = "Do textového pole zadejte příklad k vypočítání.")]
+
         public string Input { get; set; } = "";
-        private List<string> InputSplit { get; set; }
+        public string InputOriginal { get; private set; } = "";
+        private List<string> InputSplit { get; set; } = new List<string>();
 
         public double Result { get; private set; }
 
-       
-
+    
         public void GetResult()
         {
 
-
+            InputOriginal = Input;
             //Input = Regex.Replace(Input, "^2", "^");
             Input = Regex.Replace(Input, "√", "s");
 
@@ -171,10 +172,19 @@ namespace ASP.NET_Core_MVC_Calculator.Models
 
 
 
+           
 
             else 
             {
-                return double.Parse(String.Join("", expression.ToArray())); 
+                double result = double.Parse(expression[0]);
+
+                for(int i = 1; i< expression.Count; i++)
+                {
+                    result = double.Parse(expression[i]) * result;
+                }
+
+                return result;
+                //return double.Parse(String.Join("", expression.ToArray())); 
             }
            
         }
@@ -192,14 +202,16 @@ namespace ASP.NET_Core_MVC_Calculator.Models
         }
         
         public bool AreTwoNumsNextToEachother()
-        {
-            for (int i = 1; i < Input.Length - 1; i++)
-            {
+        {  
+                for (int i = 1; i < Input.Length - 1; i++)
+                {
                 if (Input[i] == ' ' && (char.IsDigit(Input[i - 1]) && char.IsDigit(Input[i + 1])))
                 {
                     return true;
                 }
+            
             }
+           
 
             return false;
         }
@@ -274,5 +286,15 @@ namespace ASP.NET_Core_MVC_Calculator.Models
         }
 
         public bool IsLetterInInput() => Input.Any(x => char.IsLetter(x));
+
+        public bool IsInputEmpty()
+        {
+            if (string.IsNullOrEmpty(Input))
+            {
+                return true;
+            }
+
+            return false;
+        }
     }
 }
