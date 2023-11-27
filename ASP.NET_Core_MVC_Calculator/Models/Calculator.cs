@@ -24,7 +24,7 @@ namespace ASP.NET_Core_MVC_Calculator.Models
 
 
             //Input = Regex.Replace(Input, "^2", "^");
-            Input = Regex.Replace(Input, "sqrt", "s");
+            Input = Regex.Replace(Input, "√", "s");
 
             AddSpaceAroundOperators();
             InputSplit = Input.Split(' ', StringSplitOptions.RemoveEmptyEntries).ToList();

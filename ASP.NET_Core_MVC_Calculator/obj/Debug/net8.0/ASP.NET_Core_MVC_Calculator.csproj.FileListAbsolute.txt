@@ -508,3 +508,17 @@ C:\Users\rezm\Documents\GitHub\ASP.NET_Calculator\ASP.NET_Core_MVC_Calculator\ob
 C:\Users\rezm\Documents\GitHub\ASP.NET_Calculator\ASP.NET_Core_MVC_Calculator\obj\Debug\net8.0\ASP.NET_Core_MVC_Calculator.pdb
 C:\Users\rezm\Documents\GitHub\ASP.NET_Calculator\ASP.NET_Core_MVC_Calculator\obj\Debug\net8.0\ASP.NET_Core_MVC_Calculator.genruntimeconfig.cache
 C:\Users\rezm\Documents\GitHub\ASP.NET_Calculator\ASP.NET_Core_MVC_Calculator\obj\Debug\net8.0\ref\ASP.NET_Core_MVC_Calculator.dll
+C:\Users\rezm\Documents\GitHub\ASP.NET_Calculator\ASP.NET_Core_MVC_Calculator\bin\Debug\net8.0\Microsoft.AspNetCore.Components.QuickGrid.dll
+C:\Users\rezm\Documents\GitHub\ASP.NET_Calculator\ASP.NET_Core_MVC_Calculator\bin\Debug\net8.0\Microsoft.AspNetCore.Components.QuickGrid.EntityFrameworkAdapter.dll
+C:\Users\rezm\Documents\GitHub\ASP.NET_Calculator\ASP.NET_Core_MVC_Calculator\bin\Debug\net8.0\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\rezm\Documents\GitHub\ASP.NET_Calculator\ASP.NET_Core_MVC_Calculator\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\rezm\Documents\GitHub\ASP.NET_Calculator\ASP.NET_Core_MVC_Calculator\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\rezm\Documents\GitHub\ASP.NET_Calculator\ASP.NET_Core_MVC_Calculator\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\rezm\Documents\GitHub\ASP.NET_Calculator\ASP.NET_Core_MVC_Calculator\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
+C:\Users\rezm\Documents\GitHub\ASP.NET_Calculator\ASP.NET_Core_MVC_Calculator\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\rezm\Documents\GitHub\ASP.NET_Calculator\ASP.NET_Core_MVC_Calculator\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+C:\Users\rezm\Documents\GitHub\ASP.NET_Calculator\ASP.NET_Core_MVC_Calculator\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll
+C:\Users\rezm\Documents\GitHub\ASP.NET_Calculator\ASP.NET_Core_MVC_Calculator\bin\Debug\net8.0\System.IO.Pipelines.dll
+C:\Users\rezm\Documents\GitHub\ASP.NET_Calculator\ASP.NET_Core_MVC_Calculator\bin\Debug\net8.0\System.Text.Encodings.Web.dll
+C:\Users\rezm\Documents\GitHub\ASP.NET_Calculator\ASP.NET_Core_MVC_Calculator\bin\Debug\net8.0\System.Text.Json.dll
+C:\Users\rezm\Documents\GitHub\ASP.NET_Calculator\ASP.NET_Core_MVC_Calculator\bin\Debug\net8.0\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll

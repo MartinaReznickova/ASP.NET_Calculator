@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "0AGcrpxfZsnVn+x3Ue02vxOenhsoZbcInVu54WaBkks=",
+  "Hash": "ZsFZT3+slcjFujll2eMZArKCeItDb8ep/Gmj20q8j7k=",
   "Source": "ASP.NET_Core_MVC_Calculator",
   "BasePath": "_content/ASP.NET_Core_MVC_Calculator",
   "Mode": "Default",
@@ -16,6 +16,44 @@
     }
   ],
   "Assets": [
+    {
+      "Identity": "C:\\Users\\rezm\\.nuget\\packages\\microsoft.aspnetcore.components.quickgrid\\8.0.0\\staticwebassets\\Microsoft.AspNetCore.Components.QuickGrid.bundle.scp.css",
+      "SourceId": "Microsoft.AspNetCore.Components.QuickGrid",
+      "SourceType": "Package",
+      "ContentRoot": "C:\\Users\\rezm\\.nuget\\packages\\microsoft.aspnetcore.components.quickgrid\\8.0.0\\staticwebassets\\",
+      "BasePath": "_content/Microsoft.AspNetCore.Components.QuickGrid",
+      "RelativePath": "Microsoft.AspNetCore.Components.QuickGrid.bundle.scp.css",
+      "AssetKind": "All",
+      "AssetMode": "Reference",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "ScopedCss",
+      "AssetTraitValue": "ProjectBundle",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\rezm\\.nuget\\packages\\microsoft.aspnetcore.components.quickgrid\\8.0.0\\staticwebassets\\Microsoft.AspNetCore.Components.QuickGrid.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\rezm\\.nuget\\packages\\microsoft.aspnetcore.components.quickgrid\\8.0.0\\staticwebassets\\QuickGrid.razor.js",
+      "SourceId": "Microsoft.AspNetCore.Components.QuickGrid",
+      "SourceType": "Package",
+      "ContentRoot": "C:\\Users\\rezm\\.nuget\\packages\\microsoft.aspnetcore.components.quickgrid\\8.0.0\\staticwebassets\\",
+      "BasePath": "_content/Microsoft.AspNetCore.Components.QuickGrid",
+      "RelativePath": "QuickGrid.razor.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\rezm\\.nuget\\packages\\microsoft.aspnetcore.components.quickgrid\\8.0.0\\staticwebassets\\QuickGrid.razor.js"
+    },
     {
       "Identity": "C:\\Users\\rezm\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\8.0.0-rc.2.23480.2\\staticwebassets\\V5\\css\\site.css",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
@@ -1155,6 +1193,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\rezm\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\8.0.0-rc.2.23480.2\\staticwebassets\\V5\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Identity": "C:\\Users\\rezm\\Documents\\GitHub\\ASP.NET_Calculator\\ASP.NET_Core_MVC_Calculator\\obj\\Debug\\net8.0\\scopedcss\\bundle\\ASP.NET_Core_MVC_Calculator.styles.css",
+      "SourceId": "ASP.NET_Core_MVC_Calculator",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\rezm\\Documents\\GitHub\\ASP.NET_Calculator\\ASP.NET_Core_MVC_Calculator\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
+      "BasePath": "_content/ASP.NET_Core_MVC_Calculator",
+      "RelativePath": "ASP.NET_Core_MVC_Calculator.styles.css",
+      "AssetKind": "All",
+      "AssetMode": "CurrentProject",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "ScopedCss",
+      "AssetTraitValue": "ApplicationBundle",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\rezm\\Documents\\GitHub\\ASP.NET_Calculator\\ASP.NET_Core_MVC_Calculator\\obj\\Debug\\net8.0\\scopedcss\\bundle\\ASP.NET_Core_MVC_Calculator.styles.css"
     },
     {
       "Identity": "C:\\Users\\rezm\\Documents\\GitHub\\ASP.NET_Calculator\\ASP.NET_Core_MVC_Calculator\\wwwroot\\css\\site.css",
