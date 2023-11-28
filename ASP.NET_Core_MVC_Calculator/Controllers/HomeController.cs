@@ -15,16 +15,15 @@ namespace ASP.NET_Core_MVC_Calculator.Controllers
 
         [HttpPost]
         public IActionResult Index(Calculator calc)
-        {   
-            if(calc.IsInputEmpty())
+        {
+            if (string.IsNullOrEmpty(calc.Input))
             {
-                //ViewBag.Chyba = "Do textového pole zadejte příklad k vypočítání.";
                 return View(calc);
             }
-            
+
             if (calc.AreTwoNumsNextToEachother())
             {
-                ViewBag.Chyba += "Mezera mezi dvěma čísli, chybí operátor.";
+                ViewBag.Chyba = "Mezera mezi dvěma čísli, chybí operátor.";
             }
 
             if (calc.IsLetterInInput())
@@ -41,16 +40,17 @@ namespace ASP.NET_Core_MVC_Calculator.Controllers
             {
                 ViewBag.Chyba += "Desetinná tečka musí být mezi dvěma čísli. ";
             }
-            
-            if(calc.IsOperatorDuplicate())
+
+            if (calc.IsOperatorDuplicate())
             {
                 ViewBag.Chyba += "Vstup obsahuje zdvojené operátory. ";
             }
-            
-            if(!calc.IsNumOfBracketsEven()) {
+
+            if (!calc.IsNumOfBracketsEven())
+            {
                 ViewBag.Chyba += "Každá závorka musí být uzavřená. ";
             }
-            
+
             if (ModelState.IsValid)
             {
                 if (ViewBag.Chyba == null)
@@ -60,7 +60,8 @@ namespace ASP.NET_Core_MVC_Calculator.Controllers
                         calc.GetResult();
                     }
 
-                    catch {
+                    catch
+                    {
 
                         ViewBag.Expression = calc.InputOriginal;
                         ViewBag.Chyba = "Kalkulačka nedokázala výpočet zpracovat, zkuste zadat jiný příklad.";
@@ -68,15 +69,14 @@ namespace ASP.NET_Core_MVC_Calculator.Controllers
                         return View(calculator); ;
 
                     }
-                    
-                  
+
+
                 }
-                
+
 
             }
 
-            
-          
+
             return View(calc);
         }
 

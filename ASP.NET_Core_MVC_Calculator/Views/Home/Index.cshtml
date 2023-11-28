@@ -6,22 +6,22 @@
 
 <!DOCTYPE html>
 
-<html >
+<html>
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Kalkulačka</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css"/>
+    <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body style="margin: 2rem;">
 
-<h1>Kalkulačka</h1>
-<hr />
+    <h1>Kalkulačka</h1>
+    <hr />
     <h3>Příklad k vypočítání:</h3>
-<div class="row">
-    <div class="col-md-4">
-        <div>
-               
+    <div class="row">
+        <div class="col-md-4">
+            <div>
+
                 @if (ViewBag.Chyba != null)
                 {
                     <p style="color: red; ">Chyba vstupu: @ViewBag.Chyba</p>
@@ -31,83 +31,80 @@
                 {
                     <p style="color: red;">Zadaný vstup: "@ViewBag.Expression".</p>
                 }
-        </div>
-        <form asp-action="Index">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-              @*   <label asp-for="Input" class="control-label"></label> *@
-                <input id="inputText" asp-for="Input" class="form-control" />
-                <span asp-validation-for="Input" class="text-danger"></span>
             </div>
+            <form asp-action="Index">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    @*   <label asp-for="Input" class="control-label"></label> *@
+                    <input id="inputText" asp-for="Input" class="form-control" />
+                    <span asp-validation-for="Input" class="text-danger"></span>
+                </div>
 
-            <div class="container" id="VirtualKeyboard">
-                <div class="col">
+                <div class="container" id="VirtualKeyboard">
+                    <div class="col">
 
                         <input id="num7" type="button" value="7" class="btn btn-calc" onclick="input(this);" />
                         <input id="num8" type="button" value="8" class="btn btn-calc" onclick="input(this);" />
                         <input id="num9" type="button" value="9" class="btn btn-calc" onclick="input(this);" />
                         <input id="plus" type="button" value="+" class="btn btn-calc" onclick="input(this);" />
                         <input id="space" type="button" value=" " class="btn btn-calc" onclick="input(this);" />
-                </div>
+                    </div>
 
-                <div class="col">
+                    <div class="col">
                         <input id="num4" type="button" value="4" class="btn btn-calc" onclick="input(this);" />
                         <input id="num5" type="button" value="5" class="btn btn-calc" onclick="input(this);" />
                         <input id="num6" type="button" value="6" class="btn btn-calc" onclick="input(this);" />
                         <input id="minus" type="button" value="-" class="btn btn-calc" onclick="input(this);" />
                         <input id="powerof2" type="button" value="()^2" class="btn btn-calc" onclick="input(this);" />
-                </div>
-                   
-                <div class="col">
+                    </div>
+
+                    <div class="col">
                         <input id="num1" type="button" value="1" class="btn btn-calc" onclick="input(this);" />
                         <input id="num2" type="button" value="2" class="btn btn-calc" onclick="input(this);" />
                         <input id="num3" type="button" value="3" class="btn btn-calc" onclick="input(this);" />
                         <input id="multiply" type="button" value="*" class="btn btn-calc" onclick="input(this);" />
                         <input id="sqrt" type="button" value="√()" class="btn btn-calc" onclick="input(this);" />
-                </div>
+                    </div>
 
-                <div class="col">
+                    <div class="col">
                         <input id="num0" type="button" value="0" class="btn btn-calc" onclick="input(this);" />
                         <input id="leftBracket" type="button" value="(" class="btn btn-calc" onclick="input(this);" />
                         <input id="rightBracket" type="button" value=")" class="btn btn-calc" onclick="input(this);" />
                         <input id="divide" type="button" value="/" class="btn btn-calc" onclick="input(this);" />
                         <input id="dot" type="button" value="." class="btn btn-calc" onclick="input(this);" />
                         <input id="delete" type="button" value="C" class="btn btn-calc" onclick="delet(this);" />
+                    </div>
+
                 </div>
-         
-            </div>
-            
-            <div class="form-group">
-               <input type="submit" value="Vypočítej" class="btn btn-primary" />
-             </div>
+
+                <div class="form-group">
+                    <input type="submit" value="Vypočítej" class="btn btn-primary" />
+                </div>
 
                 <h1 id="result">@Model.Result</h1>
-           
-        </form>
+
+            </form>
+        </div>
     </div>
-</div>
 
 
 
-     <script type="text/javascript">
-            function input(c) {
-                var inputText = document.getElementById("inputText");
-                inputText.value = inputText.value + c.value;
-            }
+    <script type="text/javascript">
+        function input(c) {
+            var inputText = document.getElementById("inputText");
+            inputText.value = inputText.value + c.value;
+        }
 
-            function delet() {
-                var inputText = document.getElementById("inputText");
-                inputText.value = inputText.value.substr(0, inputText.value.length - 1);
-            }
-        </script>
-       
-    
-  
+        function delet() {
+            var inputText = document.getElementById("inputText");
+            inputText.value = inputText.value.substr(0, inputText.value.length - 1);
+        }
+    </script>
 
-
-
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+    @section Scripts {
+        @{
+            await Html.RenderPartialAsync("_ValidationScriptsPartial");
+        }
+    }
 </body>
 </html>
