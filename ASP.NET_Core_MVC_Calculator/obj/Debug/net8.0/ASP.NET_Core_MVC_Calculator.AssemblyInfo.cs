@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ASP.NET_Core_MVC_Calculator")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2e01c21cf97af8de489186e6f09dc0f7b195cadc")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cc305511685379923011483bfbb9fec9f34aba81")]
 [assembly: System.Reflection.AssemblyProductAttribute("ASP.NET_Core_MVC_Calculator")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ASP.NET_Core_MVC_Calculator")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
