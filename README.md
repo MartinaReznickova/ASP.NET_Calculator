@@ -7,9 +7,14 @@ EN: A simple web calculator that processes examples from text input from the use
 
 
 # Challenges
-Největší výzvou u tohoto projektu pro mě bylo ošetřit všechny možné uživatelské vstupy a vytvořit responzivní design, který vypadá dobře i na malých zařízeních.
+Největší výzvou u tohoto projektu pro mě bylo ošetřit všechny možné uživatelské vstupy a vytvořit responzivní design.
 
-EN: The biggest challenge in this project for me was handling all possible user inputs and creating a responsive design that looks good even on small devices.
+EN: The biggest challenge in this project for me was handling all possible user inputs and creating a responsive design.
+
+# Mistakes/Failures
+Největším nedostatkem je podle mě rozhozený design v menším rozlišení, se kterým jsem bojovala nějakou dobu a zatím se mi poblém nepovedlo vyřešit. 
+
+EN: In my opinion, the biggest fail is the scattered design on smaller devices, which I have been struggling with for some time, and so far, I have not been able to solve the problem.
 
 # Screenshots
 ![Screenshot 2023-11-28 133029](https://github.com/MartinaReznickova/ASP.NET_Calculator/assets/139158101/6f786742-7eac-4eee-8ccd-b52e2c49d785)
