@@ -3,7 +3,7 @@ Jednoduchá webová kalkulačka, která zpracovává příklady z textového vst
 
 EN: A simple web calculator that processes examples from text input from the user.
 
-[aspnetcoremvccalculator.azurewebsites.net](https://aspnetcoremvccalculator.azurewebsites.net/)
+[Vyzkoušet](https://aspnetcoremvccalculator.azurewebsites.net/)
 
 
 # Challenges
